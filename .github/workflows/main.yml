@@ -1,28 +1,28 @@
-```
-name: Deploy Website Portofolio to Hostdata
+name: Deploy Portfolio to Hosting
 
 on:
   push:
     branches:
-      - main  # Otomatis deploy setiap kamu push ke branch main
+      - main  # Ganti dengan nama branch utama kamu (bisa 'master')
 
 jobs:
-  web-deploy:
-    name: 🎉 Deploy
+  deploy:
+    name: Upload via FTP
     runs-on: ubuntu-latest
-    steps:
-    - name: 🚚 Get latest code
-      uses: actions/checkout@v3
 
-    - name: 🚀 Sync files to Hostdata
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-      with:
-        # Data ini diambil dari GitHub Secrets (bukan ditulis langsung di sini)
-        server: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        # Folder di hosting kamu, biasanya 'public_html' atau 'httpdocs'
-        server-dir: ./public_html/ 
-        # File yang akan dikirim (semua yang ada di repo)
-        local-dir: ./
-```
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}       # Contoh: ftp.namadomain.com
+          username: ${{ secrets.FTP_USERNAME }}   # Username FTP dari cPanel/Hostdata
+          password: ${{ secrets.FTP_PASSWORD }}   # Password FTP dari cPanel/Hostdata
+          server-dir: /                           # FTP root sudah di dalam public_html
+          exclude: |
+            **/.git*
+            **/.git*/**
+            .github/**
+            README.md
