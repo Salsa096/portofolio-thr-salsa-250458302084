@@ -1,0 +1,243 @@
+/* ===============================
+   ROOT COLOR (PALETTE)
+================================ */
+:root {
+  --primary: #ec4899;
+  --hover: #db2777;
+  --soft: #fce7f3;
+  --extra: #fff1f7;
+  --text: #1f2937;
+  --gray: #6b7280;
+}
+
+/* ===============================
+   GLOBAL
+================================ */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #fafafa;
+  color: var(--text);
+}
+
+/* Smooth transition */
+* {
+  transition: all 0.3s ease;
+}
+
+/* ===============================
+   NAVBAR
+================================ */
+header {
+  background: white;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+header h1 {
+  color: var(--primary);
+}
+
+/* Nav link */
+nav a {
+  position: relative;
+}
+
+nav a:hover {
+  color: var(--primary);
+}
+
+/* Underline animation */
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: var(--primary);
+  transition: 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* ===============================
+   BUTTON
+================================ */
+button,
+a.button {
+  transition: all 0.3s ease;
+}
+
+/* Contact button */
+a[href="#contact"] {
+  border: 1px solid var(--primary);
+  color: var(--primary);
+}
+
+a[href="#contact"]:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* Mobile menu button */
+#menuBtn {
+  background: var(--primary);
+}
+
+#menuBtn:hover {
+  background: var(--hover);
+}
+
+/* ===============================
+   SIDEBAR
+================================ */
+#sidebar {
+  background: var(--primary);
+}
+
+#sidebar a:hover {
+  color: var(--soft);
+}
+
+/* ===============================
+   HERO
+================================ */
+section h1 span {
+  color: var(--primary);
+}
+
+section p {
+  color: var(--gray);
+}
+
+/* ===============================
+   TAG (About, Skills, etc)
+================================ */
+section p.border {
+  background: var(--soft);
+  border: 1px solid #fbcfe8;
+  color: var(--primary);
+}
+
+/* ===============================
+   ABOUT SECTION
+================================ */
+#about {
+  background: var(--extra);
+  padding: 40px 0;
+  border-radius: 20px;
+}
+
+/* ===============================
+   SKILLS
+================================ */
+#skills {
+  background: var(--soft);
+  padding: 40px 20px;
+  border-radius: 20px;
+}
+
+/* Skill card default */
+.skill-card {
+  background: white;
+  border-radius: 16px;
+}
+
+/* Dark card jadi pink */
+.skill-card.bg-black {
+  background: var(--primary) !important;
+}
+
+/* Hover effect */
+.skill-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(236, 72, 153, 0.2);
+}
+
+/* ===============================
+   EXPERIENCE
+================================ */
+#experience {
+  background: white;
+}
+
+/* ===============================
+   PORTFOLIO
+================================ */
+#portfolio {
+  background: var(--extra);
+  padding: 40px 20px;
+  border-radius: 20px;
+}
+
+/* Card */
+.portfolio-card {
+  background: white;
+}
+
+/* Hover */
+.portfolio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(236, 72, 153, 0.2);
+}
+
+/* Image zoom */
+.portfolio-card img {
+  transition: transform 0.4s ease;
+}
+
+.portfolio-card:hover img {
+  transform: scale(1.05);
+}
+
+/* ===============================
+   FOOTER
+================================ */
+footer {
+  background: var(--primary);
+}
+
+footer a:hover {
+  color: var(--soft);
+}
+
+/* ===============================
+   ANIMATION
+================================ */
+@keyframes fadeInDown {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Apply animation */
+section h1,
+section h2,
+section p {
+  animation: fadeInDown 0.8s ease forwards;
+}
+
+/* ===============================
+   SCROLLBAR (bonus aesthetic)
+================================ */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fce7f3;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--hover);
+}

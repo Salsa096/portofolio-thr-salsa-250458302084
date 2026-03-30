@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Salsa Portfolio</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+
+    <!-- MOBILE BUTTON -->
+    <button id="menuBtn" class="md:hidden fixed top-5 right-5 z-50 bg-black text-white px-3 py-2 rounded-lg shadow-lg">
+        ☰
+    </button>
+
+    <!-- SIDEBAR -->
+    <div id="sidebar"
+        class="fixed top-0 right-[-100%] w-64 h-full bg-black text-white p-6 transition-all duration-300 z-40">
+        <button id="closeBtn" class="mb-6 text-xl">✕</button>
+        <nav class="flex flex-col gap-4 text-lg">
+            <a href="#" class="hover:text-gray-400 transition">Home</a>
+            <a href="#about" class="hover:text-gray-400 transition">About</a>
+            <a href="#skills" class="hover:text-gray-400 transition">Skills</a>
+            <a href="#portfolio" class="hover:text-gray-400 transition">Portfolio</a>
+        </nav>
+    </div>
+
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto flex justify-between items-center px-6 md:px-20 py-4">
+            <h1 class="text-2xl font-bold text-gray-900">SALSA</h1>
+
+            <nav class="hidden md:flex gap-10 items-center text-sm font-medium">
+                <a href="#" class="hover:text-gray-600 transition">Home</a>
+                <a href="#about" class="hover:text-gray-600 transition">About</a>
+                <a href="#skills" class="hover:text-gray-600 transition">Skills</a>
+                <a href="#portfolio" class="hover:text-gray-600 transition">Portfolio</a>
+            </nav>
+
+            <a href="#contact"
+                class="hidden md:inline-block border border-black px-4 py-2 rounded-full text-sm hover:bg-black hover:text-white transition">Contact</a>
+
+            <button id="menuBtn" class="md:hidden text-xl bg-black text-white px-3 py-2 rounded-lg shadow-lg">☰</button>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="px-10 md:px-20 min-h-screen flex flex-col items-center justify-center text-center gap-6">
+        <p class="text-base md:text-lg text-gray-500">Hi, my name is</p>
+        <h1 class="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">
+            Salsa Wahyuni Ahmad
+        </h1>
+        <h2 class="text-3xl md:text-4xl font-light text-gray-700">
+            Fullstack Developer
+        </h2>
+        <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-2xl">
+            Saya membangun solusi digital yang intuitif dan modern dengan fokus pada pengembangan frontend, serta
+            didukung kemampuan backend untuk menciptakan aplikasi yang fungsional dan terintegrasi dengan baik. </p>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="px-10 md:px-20 mt-8 grid md:grid-cols-2 gap-6 items-center">
+        <!-- Foto -->
+        <div class="flex">
+            <div class="w-full max-w-sm mx-auto md:mx-0 md:ml-8">
+                <img src="images/hero.jpg" class="rounded-xl shadow-lg w-full object-cover" />
+            </div>
+        </div>
+
+        <!-- Teks & Info -->
+        <div class="flex flex-col justify-center gap-6 max-w-md">
+            <p class="text-sm border px-3 py-1 rounded-full mb-2 bg-gray-100">About Me</p>
+            <h3 class="text-2xl mb-3 font-semibold">
+                Mahasiswi TRPL di Universitas Politeknik IDN yang berfokus pada pengembangan frontend web dan mobile
+                dengan desain modern dan user-friendly.
+            </h3>
+            <p class="text-gray-600 text-sm mb-4">
+                Saya berfokus menciptakan tampilan yang menarik, responsif, dan mudah digunakan, serta didukung dengan
+                pemahaman backend untuk membangun aplikasi yang optimal.
+            </p>
+
+            <div class="flex gap-10">
+                <div>
+                    <h4 class="text-3xl font-bold">7+</h4>
+                    <p class="text-sm text-gray-500">Projects Completed</p>
+                </div>
+
+                <div>
+                    <h4 class="text-3xl font-bold">5+</h4>
+                    <p class="text-sm text-gray-500">Highlighted Projects</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="px-10 md:px-20 mt-28">
+        <p class="text-sm border inline-block px-3 py-1 rounded-full mb-6 bg-gray-100">Skills</p>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="skill-card bg-white p-6 rounded-xl shadow-sm transition-all duration-300">
+                <h4 class="font-semibold mb-2">Flutter & Mobile Development</h4>
+                <p class="text-sm text-gray-500">Aplikasi mobile cross-platform dengan Flutter dan state management
+                    GetX/BLoC.</p>
+            </div>
+            <div class="skill-card bg-black text-white p-6 rounded-xl transition-all duration-300">
+                <h4 class="font-semibold mb-2">Web Development</h4>
+                <p class="text-sm">HTML, CSS, JavaScript, React; membangun website responsif dan user-friendly.</p>
+            </div>
+            <div class="skill-card bg-white p-6 rounded-xl shadow-sm transition-all duration-300">
+                <h4 class="font-semibold mb-2">UI/UX Design</h4>
+                <p class="text-sm text-gray-500">Merancang antarmuka modern mengikuti prinsip desain TRPL.</p>
+            </div>
+            <div class="skill-card bg-black text-white p-6 rounded-xl transition-all duration-300">
+                <h4 class="font-semibold mb-2">Database & API Integration</h4>
+                <p class="text-sm">Menyambungkan backend dengan frontend menggunakan MySQL, Firebase, REST API.</p>
+            </div>
+            <div class="skill-card bg-white p-6 rounded-xl shadow-sm transition-all duration-300">
+                <h4 class="font-semibold mb-2">Version Control</h4>
+                <p class="text-sm text-gray-500">Git & GitHub untuk manajemen versi dan kolaborasi proyek.</p>
+            </div>
+            <div class="skill-card bg-black text-white p-6 rounded-xl transition-all duration-300">
+                <h4 class="font-semibold mb-2">Problem Solving & Algorithm</h4>
+                <p class="text-sm">Menyelesaikan masalah pemrograman, logika, dan algoritma di TRPL.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="px-10 md:px-20 mt-28">
+        <p class="text-sm border inline-block px-3 py-1 rounded-full mb-6 bg-gray-100">Experience</p>
+        <h3 class="text-2xl mb-6 font-semibold">My Journey</h3>
+        <div class="space-y-4">
+            <div class="flex justify-between border-b pb-3">
+                <span>Mahasiwi Politeknik IDN</span>
+                <span class="text-gray-500">2025 - Now</span>
+            </div>
+            <div class="flex justify-between border-b pb-3">
+                <span>MAN 1 INHIL</span>
+                <span class="text-gray-500">2022 - 2025</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="px-10 md:px-20 mt-28">
+        <p class="text-sm border inline-block px-3 py-1 rounded-full mb-6 bg-gray-100">Portfolio</p>
+        <h3 class="text-2xl mb-6 font-semibold">Selected Projects</h3>
+
+        <!-- GRID 6 KOLOM -->
+        <div class="grid grid-cols-1 md:grid-cols-6 gap-6">
+
+            <!-- 3 ITEM ATAS -->
+            <div
+                class="portfolio-card md:col-span-2 rounded-xl overflow-hidden shadow-sm bg-white p-4 transition hover:shadow-lg">
+                <img src="images/hotel.jpg" class="rounded-xl w-full mb-3" />
+                <h4 class="font-semibold text-sm mb-1">Hotel App</h4>
+                <p class="text-xs text-gray-500 mb-2">
+                    A Flutter app for hotel booking with modern UI and room reservation features.
+                </p>
+            </div>
+
+            <div
+                class="portfolio-card md:col-span-2 rounded-xl overflow-hidden shadow-sm bg-white p-4 transition hover:shadow-lg">
+                <img src="images/eatology.jpg" class="rounded-xl w-full mb-3" />
+                <h4 class="font-semibold text-sm mb-1">Eatology</h4>
+                <p class="text-xs text-gray-500 mb-2">
+                    Recipe app with search and categories, built with Flutter.
+                </p>
+            </div>
+
+            <div
+                class="portfolio-card md:col-span-2 rounded-xl overflow-hidden shadow-sm bg-white p-4 transition hover:shadow-lg">
+                <img src="images/newsapp.jpg" class="rounded-xl w-full mb-3" />
+                <h4 class="font-semibold text-sm mb-1">News App</h4>
+                <p class="text-xs text-gray-500 mb-2">
+                    Mobile news app with state management using GetX.
+                </p>
+            </div>
+
+            <!-- 2 ITEM BAWAH (CENTER) -->
+            <div
+                class="portfolio-card md:col-span-2 md:col-start-2 rounded-xl overflow-hidden shadow-sm bg-white p-4 transition hover:shadow-lg">
+                <img src="images/penggaduan.jpg" class="rounded-xl w-full mb-3" />
+                <h4 class="font-semibold text-sm mb-1">Web Pengaduan Masyarakat</h4>
+                <p class="text-xs text-gray-500 mb-2">
+                    Community complaint management website.
+                </p>
+            </div>
+
+            <div
+                class="portfolio-card md:col-span-2 md:col-start-4 rounded-xl overflow-hidden shadow-sm bg-white p-4 transition hover:shadow-lg">
+                <img src="images/feWhatsapp.jpg" class="rounded-xl w-full mb-3" />
+                <h4 class="font-semibold text-sm mb-1">Frontend WhatsApp</h4>
+                <p class="text-xs text-gray-500 mb-2">
+                    WhatsApp frontend clone focusing on UI and messaging interface.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact" class="mt-28 bg-black text-white px-10 md:px-20 py-16">
+        <!-- Heading -->
+        <h2 class="text-4xl font-semibold">Let’s Connect</h2>
+        <p class="text-gray-400 mt-2 mb-10 text-sm">
+            Open for opportunities & collaborations
+        </p>
+
+        <!-- Main Grid -->
+        <div class="grid md:grid-cols-3 gap-10 text-sm">
+            <!-- Profile -->
+            <div>
+                <h3 class="font-semibold mb-2">Salsa Wahyuni</h3>
+                <p class="text-gray-400">Student & Developer</p>
+            </div>
+
+            <!-- Contact -->
+            <div>
+                <p class="mb-1">Email</p>
+                <p class="text-gray-400">
+                    <a href="mailto:salsawahyuniii@email.com">salsawahyuniii@email.com</a>
+                </p>
+            </div>
+
+            <!-- Social + Tagline sejajar -->
+            <div class="flex justify-between items-start">
+                <!-- Social -->
+                <div>
+                    <p class="mb-2">Social</p>
+                    <div class="flex flex-col text-gray-400 space-y-1">
+                        <a href="https://www.instagram.com/salsawhyuni_ahmad/" class="hover:text-white">Instagram</a>
+                        <a href="https://www.linkedin.com/in/salsa-wahyuniii-47b019372/"
+                            class="hover:text-white">LinkedIn</a>
+                        <a href="https://github.com/Salsa096" class="hover:text-white">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Tagline (kanan) -->
+                <div class="text-right">
+                    <p class="text-white text-sm font-medium leading-relaxed">
+                        Code.<br>
+                        Create.<br>
+                        Innovate.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom -->
+        <div
+            class="border-t border-gray-800 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+            <p>Made with ❤️ and a lot of ☕</p>
+            <p class="mt-2 md:mt-0">
+                © 2026 Salsa Wahyuni. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const sidebar = document.getElementById('sidebar');
+        const closeBtn = document.getElementById('closeBtn');
+
+        menuBtn.onclick = () => { sidebar.style.right = "0"; }
+        closeBtn.onclick = () => { sidebar.style.right = "-100%"; }
+    </script>
+
+</body>
+
+</html>
