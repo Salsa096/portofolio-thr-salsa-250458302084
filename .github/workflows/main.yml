@@ -17,6 +17,18 @@ jobs:
       - name: Install lftp
         run: sudo apt-get install -y lftp
 
+      - name: Debug Secrets
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          echo "Server set: $([[ -n "$FTP_SERVER" ]] && echo YES || echo NO)"
+          echo "Username set: $([[ -n "$FTP_USERNAME" ]] && echo YES || echo NO)"
+          echo "Password set: $([[ -n "$FTP_PASSWORD" ]] && echo YES || echo NO)"
+          echo "Server value length: ${#FTP_SERVER}"
+          nc -zv $FTP_SERVER 21 || echo "Cannot reach port 21"
+
       - name: Deploy via lftp
         env:
           FTP_SERVER: ${{ secrets.FTP_SERVER }}
