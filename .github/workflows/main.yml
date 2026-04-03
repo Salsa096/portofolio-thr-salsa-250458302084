@@ -30,7 +30,9 @@ jobs:
           set ssl:verify-certificate no
           set net:timeout 30
           set net:max-retries 3
-          open -u $FTP_USERNAME,$FTP_PASSWORD ftp://$FTP_SERVER
+          set ftp:login $FTP_USERNAME
+          set ftp:password $FTP_PASSWORD
+          open $FTP_SERVER
           mirror --reverse --delete --verbose --exclude .git --exclude .github --exclude README.md ./ /
           bye
           EOF
